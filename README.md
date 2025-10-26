@@ -71,17 +71,53 @@ Update `app/page.tsx` to modify:
 
 ### Vercel (Recommended)
 
-1. Push your code to GitHub
-2. Import project in Vercel
-3. Deploy automatically
+The site is ready to deploy on Vercel. Follow these steps:
+
+#### Option 1: Deploy via Vercel Dashboard (Easiest)
+
+1. **Push to GitHub**:
+   ```bash
+   git add .
+   git commit -m "Ready for deployment"
+   git push origin main
+   ```
+
+2. **Go to Vercel**:
+   - Visit [vercel.com](https://vercel.com)
+   - Click "Add New..." → "Project"
+   - Import your GitHub repository
+
+3. **Configure & Deploy**:
+   - Vercel auto-detects Next.js
+   - No build settings needed
+   - Click "Deploy"
+
+4. **Done!** Your site will be live in seconds.
+
+#### Option 2: Deploy via CLI
 
 ```bash
 # Install Vercel CLI
 npm i -g vercel
 
+# Login
+vercel login
+
 # Deploy
 vercel
+
+# Production deployment
+vercel --prod
 ```
+
+#### Environment Variables
+No environment variables required for this portfolio.
+
+#### Build Settings (Auto-detected by Vercel)
+- **Framework Preset**: Next.js
+- **Build Command**: `npm run build` (auto)
+- **Output Directory**: `.next` (auto)
+- **Install Command**: `npm install` (auto)
 
 ### Other Platforms
 This Next.js app can be deployed to:
