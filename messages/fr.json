@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "about": "À propos",
+    "aiCapabilities": "Capacités IA",
+    "experience": "Expérience",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Développeur Full Stack axé sur l'IA",
+    "title": "Construire plus vite, livrer plus intelligemment avec l'IA",
+    "subtitle": "Ingénieur de nouvelle génération exploitant l'IA comme multiplicateur de force. Livrer du code prêt pour la production 3x plus rapidement tout en maintenant l'architecture, la qualité et l'évolutivité.",
+    "getInTouch": "Contactez-moi",
+    "downloadResume": "Télécharger le CV"
+  },
+  "about": {
+    "title": "Pourquoi l'IA est ma superpuissance",
+    "subtitle": "Je ne fais pas que coder—je collabore avec l'IA pour construire des applications modernes à une vitesse sans précédent.",
+    "speedTitle": "3x plus rapide",
+    "speedDesc": "Cycles de développement sans sacrifier l'architecture ou la qualité",
+    "learningTitle": "Apprentissage continu",
+    "learningDesc": "Découvrir de nouveaux frameworks et meilleures pratiques en temps réel",
+    "shipTitle": "Livrer des fonctionnalités",
+    "shipDesc": "Prêt à déployer en jours, pas en mois"
+  },
+  "aiCapabilities": {
+    "title": "Capacités de spécialiste IA",
+    "subtitle": "Au-delà du développement assisté par l'IA—je construis des systèmes, agents et infrastructures IA de production."
+  },
+  "aiSpecializations": {
+    "agent": {
+      "title": "Agents IA et chatbots",
+      "description": "Construire des agents conversationnels intelligents et chatbots avec capacités NLP avancées. Expertise en LangChain, OpenAI GPT, Claude et intégrations LLM personnalisées.",
+      "details": ["Orchestration d'agents", "Gestion de la mémoire", "Systèmes multi-agents", "Interfaces vocales et textuelles"]
+    },
+    "finetuning": {
+      "title": "Ajustement fin des modèles",
+      "description": "Ajuster les LLMs pour applications spécifiques au domaine. Optimiser les modèles pour performance, précision et efficacité des coûts avec techniques avancées.",
+      "details": ["Transfert d'apprentissage", "LoRA & QLoRA", "Optimisation des paramètres", "Adaptation au domaine"]
+    },
+    "rag": {
+      "title": "Systèmes RAG",
+      "description": "Construire des systèmes de génération augmentée par récupération qui combinent LLMs avec bases de données vectorielles pour réponses précises et contextuelles.",
+      "details": ["Embracements vectoriels", "Recherche sémantique", "Bases de connaissances", "Gestion du contexte"]
+    },
+    "aws": {
+      "title": "IA sur AWS",
+      "description": "Déployer et mettre à l'échelle applications IA sur AWS avec Bedrock, SageMaker, Lambda et autres services cloud. Pipelines MLOps de bout en bout.",
+      "details": ["AWS Bedrock", "SageMaker ML", "Fonctions Lambda", "Instances EC2 GPU"]
+    },
+    "infrastructure": {
+      "title": "Infrastructure IA",
+      "description": "Concevoir et implémenter infrastructure IA prête pour la production avec conteneurisation, serverless et architectures évolutives.",
+      "details": ["Docker & Kubernetes", "Déploiement serverless", "Optimisation GPU", "Surveillance et logging"]
+    },
+    "devops": {
+      "title": "DevOps pour l'IA",
+      "description": "Pipelines CI/CD, tests automatisés et stratégies de déploiement optimisées spécifiquement pour charges de travail IA/ML.",
+      "details": ["Pipelines MLOps", "Versioning de modèles", "Tests A/B", "Surveillance des performances"]
+    }
+  },
+  "experience": {
+    "title": "Expérience professionnelle"
+  },
+  "skills": {
+    "title": "Stack technique"
+  },
+  "projects": {
+    "title": "Projets en vedette"
+  },
+  "contact": {
+    "title": "Construisons ensemble",
+    "subtitle": "Prêt à livrer des fonctionnalités en 3 jours, pas en 3 semaines. Construisons l'avenir, plus vite.",
+    "scheduleMeeting": "Planifier une réunion de 30 min",
+    "emailMe": "Envoyez un e-mail",
+    "bookingNote": "Réservez une réunion de 30 minutes pour discuter de votre projet"
+  },
+  "footer": {
+    "copyright": "© 2025 Ibrahim Alnezami. Construit avec Next.js, TypeScript et assistance IA."
+  }
+}
