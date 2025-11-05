@@ -39,18 +39,29 @@ export default function Home() {
   const backgroundY = useTransform(scrollY, [0, 500], ['0%', '50%']);
 
   const skills = [
+    // Frontend
     { name: 'TypeScript', icon: '⚡', color: 'from-blue-500 to-blue-600' },
     { name: 'JavaScript', icon: '📜', color: 'from-yellow-500 to-yellow-600' },
     { name: 'React', icon: '⚛️', color: 'from-cyan-500 to-cyan-600' },
     { name: 'Next.js', icon: '▲', color: 'from-gray-100 to-gray-300' },
+    { name: 'Tailwind CSS', icon: '🎨', color: 'from-teal-500 to-cyan-500' },
+    { name: 'React Query', icon: '🔄', color: 'from-purple-500 to-pink-500' },
     { name: 'Vue.js', icon: '💚', color: 'from-green-400 to-green-500' },
     { name: 'Nuxt.js', icon: '🟢', color: 'from-green-600 to-green-700' },
+    // Backend
     { name: 'Node.js', icon: '🟢', color: 'from-green-500 to-green-600' },
     { name: 'Nest.js', icon: '🐈', color: 'from-red-600 to-red-700' },
     { name: 'Express', icon: '🚂', color: 'from-gray-600 to-gray-700' },
+    { name: 'Firebase', icon: '🔥', color: 'from-orange-500 to-yellow-500' },
+    { name: 'Firebase Functions', icon: '⚡', color: 'from-orange-600 to-orange-700' },
+    // Database
     { name: 'PostgreSQL', icon: '🐘', color: 'from-blue-700 to-blue-800' },
     { name: 'MongoDB', icon: '🍃', color: 'from-green-700 to-green-800' },
+    // AI/ML & APIs
     { name: 'Python', icon: '🐍', color: 'from-yellow-500 to-yellow-600' },
+    { name: 'FastAPI', icon: '🚀', color: 'from-green-500 to-teal-500' },
+    { name: 'Google Vertex AI', icon: '🧠', color: 'from-blue-600 to-indigo-600' },
+    { name: 'RAG', icon: '📚', color: 'from-purple-600 to-violet-600' },
   ];
 
   const experience = [
@@ -59,7 +70,7 @@ export default function Home() {
       company: 'VIA UNiFi Information Technology',
       duration: 'Sep 2025 - Oct 2025',
       location: 'Dubai, UAE',
-      highlights: ['AI-integrated SaaS applications', 'Next.js & Node.js', 'Scalable APIs']
+      highlights: ['ERP System', 'Reactjs & Node.js', 'Laravel']
     },
     {
       role: 'Full Stack Developer',
