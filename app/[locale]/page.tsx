@@ -18,7 +18,8 @@ import {
   Cpu,
   Database,
   Cloud,
-  Bot
+  Bot,
+  ExternalLink
 } from 'lucide-react';
 import LanguageSwitcher from './components/LanguageSwitcher';
 
@@ -89,6 +90,20 @@ export default function Home() {
   ];
 
   const projects = [
+    {
+      name: 'AI Chatbot Assistant',
+      description: 'Modern AI chatbot with real-time streaming, weather integration, and message editing. Built for KS LAB technical test with Google Gemini Pro.',
+      tech: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'Google Gemini', 'Streaming'],
+      githubLink: 'https://github.com/ialnezami/KS',
+      liveLink: 'https://ks-pink.vercel.app'
+    },
+    {
+      name: 'Catalogue E-commerce',
+      description: 'Modern e-commerce product catalog platform with elegant design. Full-stack application showcasing contemporary product management.',
+      tech: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'E-commerce'],
+      githubLink: 'https://github.com/ialnezami/catalogue',
+      liveLink: 'https://catalogue-blue.vercel.app'
+    },
     {
       name: 'Flutter POS System',
       description: 'An open-source Flutter POS system designed for small restaurants and businesses. Complete Point of Sale solution with modern UI.',
@@ -610,13 +625,41 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
-                  <motion.a
-                    href={project.link}
-                    className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors"
-                    whileHover={{ x: 5 }}
-                  >
-                    View Project <ArrowRight className="w-4 h-4" />
-                  </motion.a>
+                  <div className="flex gap-4 flex-wrap">
+                    {project.liveLink && (
+                      <motion.a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors"
+                        whileHover={{ x: 5 }}
+                      >
+                        <ExternalLink className="w-4 h-4" /> Live Demo
+                      </motion.a>
+                    )}
+                    {project.githubLink && (
+                      <motion.a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors"
+                        whileHover={{ x: 5 }}
+                      >
+                        <Github className="w-4 h-4" /> GitHub
+                      </motion.a>
+                    )}
+                    {project.link && !project.liveLink && !project.githubLink && (
+                      <motion.a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors"
+                        whileHover={{ x: 5 }}
+                      >
+                        View Project <ArrowRight className="w-4 h-4" />
+                      </motion.a>
+                    )}
+                  </div>
                 </motion.div>
               ))}
             </div>
