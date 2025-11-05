@@ -74,5 +74,16 @@
   },
   "footer": {
     "copyright": "© 2025 Ibrahim Alnezami. Built with Next.js, TypeScript, and AI assistance."
+  },
+  "chatbot": {
+    "title": "Portfolio Assistant",
+    "subtitle": "Ask me anything",
+    "welcome": "Hello! I'm your portfolio assistant. I can answer questions about Ibrahim's experience, skills, projects, and help you schedule a meeting. How can I help you today?",
+    "placeholder": "Type your message...",
+    "openChat": "Open chat",
+    "closeChat": "Close chat",
+    "bookMeeting": "Book a Meeting",
+    "bookingPrompt": "Would you like to schedule a meeting? Click the button below to open the calendar.",
+    "error": "Sorry, I encountered an error. Please try again."
   }
 }

@@ -22,6 +22,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import LanguageSwitcher from './components/LanguageSwitcher';
+import Chatbot from './components/Chatbot';
 
 export default function Home() {
   const t = useTranslations();
@@ -645,6 +646,9 @@ export default function Home() {
             <p>{t('footer.copyright')}</p>
           </div>
         </footer>
+
+        {/* Chatbot */}
+        <Chatbot />
       </div>
     </div>
   );
