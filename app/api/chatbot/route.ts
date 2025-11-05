@@ -120,26 +120,69 @@ async function generateResponseWithGemini(
   }
 
   const genAI = new GoogleGenerativeAI(apiKey);
-  // Use gemini-1.5-flash for stability, or gemini-2.0-flash-exp for latest features
-  const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+  // Use the same model as KS project - try gemini-1.5-flash-latest or gemini-1.5-pro-latest
+  // These are the correct model names for the v1beta API
+  const modelName = process.env.GEMINI_MODEL || 'gemini-1.5-flash-latest';
+  const model = genAI.getGenerativeModel({ model: modelName });
 
   // Build conversation history
   const systemPrompt = createSystemPrompt();
-  const history = conversationHistory.map((msg: any) => ({
-    role: msg.role === 'user' ? 'user' : 'model',
-    parts: [{ text: msg.content }],
-  }));
-
-  // Add current message
-  const currentMessage = { role: 'user' as const, parts: [{ text: message }] };
+  
+  // Filter and format history for Gemini
+  // Gemini requires: first message must be from user, and messages must alternate user/model
+  const formattedHistory: Array<{ role: 'user' | 'model'; parts: Array<{ text: string }> }> = [];
+  
+  // Skip the welcome message (first assistant message) and start from first user message
+  let startIndex = 0;
+  if (conversationHistory.length > 0 && conversationHistory[0].role === 'assistant') {
+    startIndex = 1; // Skip welcome message
+  }
+  
+  for (let i = startIndex; i < conversationHistory.length; i++) {
+    const msg = conversationHistory[i];
+    formattedHistory.push({
+      role: msg.role === 'user' ? 'user' : 'model',
+      parts: [{ text: msg.content }],
+    });
+  }
+  
+  // Ensure we have valid alternating pattern (user -> model -> user -> model...)
+  // Remove any consecutive messages of the same role
+  const cleanedHistory: Array<{ role: 'user' | 'model'; parts: Array<{ text: string }> }> = [];
+  for (let i = 0; i < formattedHistory.length; i++) {
+    const current = formattedHistory[i];
+    const previous = cleanedHistory[cleanedHistory.length - 1];
+    
+    // If first message is not user, skip it
+    if (i === 0 && current.role !== 'user') {
+      continue;
+    }
+    
+    // If same role as previous, skip it
+    if (previous && previous.role === current.role) {
+      continue;
+    }
+    
+    cleanedHistory.push(current);
+  }
 
   try {
-    const chat = model.startChat({
-      history: history.length > 0 ? history : undefined,
-      systemInstruction: systemPrompt,
-    });
+    // Build the prompt with system instruction and user message
+    // Similar to KS project approach
+    const fullPrompt = `${systemPrompt}\n\nUser: ${message}`;
 
-    const result = await chat.sendMessage(message);
+    // If we have history, include it in the chat, otherwise start fresh
+    let chat;
+    if (cleanedHistory.length > 0) {
+      chat = model.startChat({
+        history: cleanedHistory,
+      });
+    } else {
+      chat = model.startChat();
+    }
+
+    // Send the message with system prompt included
+    const result = await chat.sendMessage(fullPrompt);
     const response = result.response;
     const text = response.text();
 
