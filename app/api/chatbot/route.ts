@@ -120,10 +120,12 @@ async function generateResponseWithGemini(
   }
 
   const genAI = new GoogleGenerativeAI(apiKey);
+  
   // Use the same model as KS project - try gemini-1.5-flash-latest or gemini-1.5-pro-latest
+
   // These are the correct model names for the v1beta API
-  const modelName = process.env.GEMINI_MODEL || 'gemini-1.5-flash-latest';
-  const model = genAI.getGenerativeModel({ model: modelName });
+
+  const model = genAI.getGenerativeModel({ model: 'gemini-flash-latest' });
 
   // Build conversation history
   const systemPrompt = createSystemPrompt();
