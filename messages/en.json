@@ -1,7 +1,6 @@
 {
   "nav": {
     "about": "About",
-    "aiCapabilities": "AI Capabilities",
     "experience": "Experience",
     "projects": "Projects",
     "skills": "Skills",
@@ -10,24 +9,20 @@
   "hero": {
     "badge": "Full Stack Developer",
     "name": "Ibrahim Alnezami",
-    "title": "Building faster, shipping smarter with AI",
-    "subtitle": "Next-generation engineer leveraging AI as a force multiplier. Delivering production-ready code 3x faster while maintaining architecture, quality, and scalability.",
+    "title": "Building modern applications with passion and expertise",
+    "subtitle": "Experienced full-stack developer delivering production-ready code with modern technologies. Focused on architecture, quality, and scalability.",
     "getInTouch": "Get in Touch",
     "downloadResume": "Download Resume"
   },
   "about": {
-    "title": "Why AI-First is My Superpower",
-    "subtitle": "I don't just write code—I collaborate with AI to build modern applications at unprecedented speed.",
-    "speedTitle": "3x Faster",
-    "speedDesc": "Development cycles without sacrificing architecture or quality",
+    "title": "About Me",
+    "subtitle": "Passionate developer building modern, scalable applications with cutting-edge technologies.",
+    "speedTitle": "Fast Development",
+    "speedDesc": "Efficient development cycles without sacrificing architecture or quality",
     "learningTitle": "Continuous Learning",
     "learningDesc": "Discover new frameworks and best practices in real-time",
     "shipTitle": "Ship Features",
     "shipDesc": "Ready to deploy in days, not months"
-  },
-  "aiCapabilities": {
-    "title": "AI Specialist Capabilities",
-    "subtitle": "Beyond AI-assisted development—I build production AI systems, agents, and infrastructure."
   },
   "aiSpecializations": {
     "agent": {

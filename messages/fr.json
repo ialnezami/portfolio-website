@@ -1,7 +1,6 @@
 {
   "nav": {
     "about": "À propos",
-    "aiCapabilities": "Capacités IA",
     "experience": "Expérience",
     "projects": "Projets",
     "skills": "Compétences",
@@ -10,24 +9,20 @@
   "hero": {
     "badge": "Développeur Full Stack",
     "name": "Ibrahim Alnezami",
-    "title": "Construire plus vite, livrer plus intelligemment avec l'IA",
-    "subtitle": "Ingénieur de nouvelle génération exploitant l'IA comme multiplicateur de force. Livrer du code prêt pour la production 3x plus rapidement tout en maintenant l'architecture, la qualité et l'évolutivité.",
+    "title": "Construire des applications modernes avec passion et expertise",
+    "subtitle": "Développeur full-stack expérimenté livrant du code prêt pour la production avec des technologies modernes. Axé sur l'architecture, la qualité et l'évolutivité.",
     "getInTouch": "Contactez-moi",
     "downloadResume": "Télécharger le CV"
   },
   "about": {
-    "title": "Pourquoi l'IA est ma superpuissance",
-    "subtitle": "Je ne fais pas que coder—je collabore avec l'IA pour construire des applications modernes à une vitesse sans précédent.",
-    "speedTitle": "3x plus rapide",
-    "speedDesc": "Cycles de développement sans sacrifier l'architecture ou la qualité",
+    "title": "À propos de moi",
+    "subtitle": "Développeur passionné construisant des applications modernes et évolutives avec des technologies de pointe.",
+    "speedTitle": "Développement rapide",
+    "speedDesc": "Cycles de développement efficaces sans sacrifier l'architecture ou la qualité",
     "learningTitle": "Apprentissage continu",
     "learningDesc": "Découvrir de nouveaux frameworks et meilleures pratiques en temps réel",
     "shipTitle": "Livrer des fonctionnalités",
     "shipDesc": "Prêt à déployer en jours, pas en mois"
-  },
-  "aiCapabilities": {
-    "title": "Capacités de spécialiste IA",
-    "subtitle": "Au-delà du développement assisté par l'IA—je construis des systèmes, agents et infrastructures IA de production."
   },
   "aiSpecializations": {
     "agent": {

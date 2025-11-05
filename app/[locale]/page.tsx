@@ -178,45 +178,6 @@ export default function Home() {
     },
   ];
 
-  const aiSpecializations = [
-    {
-      icon: Bot,
-      title: t('aiSpecializations.agent.title'),
-      description: t('aiSpecializations.agent.description'),
-      details: ['Agent orchestration', 'Memory management', 'Multi-agent systems', 'Voice & text interfaces']
-    },
-    {
-      icon: Brain,
-      title: t('aiSpecializations.finetuning.title'),
-      description: t('aiSpecializations.finetuning.description'),
-      details: ['Transfer learning', 'LoRA & QLoRA', 'Parameter optimization', 'Domain adaptation']
-    },
-    {
-      icon: Database,
-      title: t('aiSpecializations.rag.title'),
-      description: t('aiSpecializations.rag.description'),
-      details: ['Vector embeddings', 'Semantic search', 'Knowledge bases', 'Context management']
-    },
-    {
-      icon: Cloud,
-      title: t('aiSpecializations.aws.title'),
-      description: t('aiSpecializations.aws.description'),
-      details: ['AWS Bedrock', 'SageMaker ML', 'Lambda functions', 'EC2 GPU instances']
-    },
-    {
-      icon: Cpu,
-      title: t('aiSpecializations.infrastructure.title'),
-      description: t('aiSpecializations.infrastructure.description'),
-      details: ['Docker & Kubernetes', 'Serverless deployment', 'GPU optimization', 'Monitoring & logging']
-    },
-    {
-      icon: Zap,
-      title: t('aiSpecializations.devops.title'),
-      description: t('aiSpecializations.devops.description'),
-      details: ['MLOps pipelines', 'Model versioning', 'A/B testing', 'Performance monitoring']
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-purple-950/20 to-black text-white overflow-hidden">
       {/* Animated background */}
@@ -256,7 +217,6 @@ export default function Home() {
             <div className="hidden md:flex gap-8 items-center">
               {[
                 t('nav.about'),
-                t('nav.aiCapabilities'),
                 t('nav.experience'),
                 t('nav.projects'),
                 t('nav.skills'),
@@ -325,7 +285,7 @@ export default function Home() {
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.4, type: 'spring' }}
               >
-                🤖 {t('hero.badge')}
+                {t('hero.badge')}
               </motion.span>
 
               <h1 className="text-6xl md:text-8xl font-bold mb-6">
@@ -406,7 +366,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* AI-First Philosophy Section */}
+        {/* About Section */}
         <section id="about" className="py-32 px-6 relative">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -458,57 +418,6 @@ export default function Home() {
                     <p className="text-gray-400">{description}</p>
                   </motion.div>
                 ))}
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* AI Specializations Section */}
-        <section id="ai-capabilities" className="py-32 px-6 relative">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-5xl font-bold mb-4 text-center">
-                <span className="text-gradient">{t('aiCapabilities.title')}</span>
-              </h2>
-              <p className="text-xl text-gray-400 text-center mb-16 max-w-3xl mx-auto">
-                {t('aiCapabilities.subtitle')}
-              </p>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {aiSpecializations.map((item, i) => {
-                  const Icon = item.icon;
-                  return (
-                    <motion.div
-                      key={item.title}
-                      initial={{ opacity: 0, y: 50 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.1 }}
-                      className="glass rounded-2xl p-8 hover-lift group"
-                    >
-                      <div className="w-14 h-14 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <Icon className="w-7 h-7 text-white" />
-                      </div>
-                      <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
-                      <p className="text-gray-400 mb-4">{item.description}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {item.details.map((detail, j) => (
-                          <span
-                            key={j}
-                            className="px-3 py-1 rounded-full bg-purple-900/30 text-purple-300 text-xs"
-                          >
-                            {detail}
-                          </span>
-                        ))}
-                      </div>
-                    </motion.div>
-                  );
-                })}
               </div>
             </motion.div>
           </div>
