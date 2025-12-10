@@ -68,7 +68,7 @@ export default function Home() {
 
   const experience = [
     {
-      role: 'Full Stack Developer (AI-First)',
+      role: 'Full Stack Developer',
       company: 'VIA UNiFi Information Technology',
       duration: 'Sep 2025 - Oct 2025',
       location: 'Dubai, UAE',
@@ -82,7 +82,7 @@ export default function Home() {
       highlights: ['Vue.js, Nuxt.js, Nest.js', 'MongoDB & RESTful APIs', 'RESTful & SOAP API integrations']
     },
     {
-      role: 'Software Engineer (Apprentice)',
+      role: 'Software Engineer ',
       company: 'Lannion-Trégor Communauté',
       duration: 'Sep 2019 - Aug 2022',
       location: 'Lannion, France',
