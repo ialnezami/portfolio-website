@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Calendar, Bot, ArrowLeft } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
@@ -16,6 +16,7 @@ interface Message {
 
 export default function ChatPage() {
   const t = useTranslations('chatbot');
+  const locale = useLocale();
   const router = useRouter();
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
@@ -169,7 +170,7 @@ export default function ChatPage() {
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Link
-              href="/"
+              href={`/${locale}`}
               className="w-10 h-10 rounded-full hover:bg-white/10 flex items-center justify-center transition-colors"
             >
               <ArrowLeft className="w-5 h-5 text-gray-400" />

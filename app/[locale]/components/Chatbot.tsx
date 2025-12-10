@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, Calendar, Bot, Maximize2 } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
 
 interface Message {
@@ -15,6 +15,8 @@ interface Message {
 
 export default function Chatbot() {
   const t = useTranslations('chatbot');
+  const locale = useLocale();
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
@@ -158,7 +160,7 @@ export default function Chatbot() {
     if (messages.length > 0) {
       localStorage.setItem('chatbot-messages', JSON.stringify(messages));
     }
-    router.push('/chat');
+    router.push(`/${locale}/chat`);
   };
 
   return (
