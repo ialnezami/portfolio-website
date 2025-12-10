@@ -559,15 +559,15 @@ export default function Home() {
                       </motion.a>
                     )}
                     {project.link && !project.liveLink && !project.githubLink && (
-                      <motion.a
-                        href={project.link}
+                  <motion.a
+                    href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors"
-                        whileHover={{ x: 5 }}
-                      >
-                        View Project <ArrowRight className="w-4 h-4" />
-                      </motion.a>
+                    className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors"
+                    whileHover={{ x: 5 }}
+                  >
+                    View Project <ArrowRight className="w-4 h-4" />
+                  </motion.a>
                     )}
                   </div>
                 </motion.div>
