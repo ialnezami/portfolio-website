@@ -236,21 +236,93 @@ I'm transparent about my workflow. I don't pretend AI doesn't exist—I've maste
 
 ## 5. Projects
 
-> **Note:** Add your featured projects here with the following information:
-> - Project name and description
-> - Tech stack used
-> - Key features
-> - Live demo URL
-> - GitHub repository
-> - Screenshots
+### Featured Projects
 
-### Featured Projects Section
-This section will showcase your best work, including:
-- Web applications you've built
-- API integrations
-- Full-stack projects
-- Open source contributions
-- Personal projects demonstrating your skills
+#### 1. AI Chatbot Assistant
+- **Description:** Modern AI chatbot with real-time streaming, weather integration, and message editing. Built for KS LAB technical test with Google Gemini Pro.
+- **Tech Stack:** Next.js, TypeScript, React, Tailwind CSS, Google Gemini, Streaming
+- **GitHub:** https://github.com/ialnezami/KS
+- **Live Demo:** https://ks-pink.vercel.app
+- **Key Features:** Real-time streaming, weather API integration, message editing
+
+#### 2. Catalogue E-commerce
+- **Description:** Modern e-commerce product catalog platform with elegant design. Full-stack application showcasing contemporary product management.
+- **Tech Stack:** Next.js, TypeScript, React, Tailwind CSS, E-commerce
+- **GitHub:** https://github.com/ialnezami/catalogue
+- **Live Demo:** https://catalogue-blue.vercel.app
+- **Key Features:** Product catalog, modern UI/UX
+
+#### 3. Flutter POS System
+- **Description:** An open-source Flutter POS system designed for small restaurants and businesses. Complete Point of Sale solution with modern UI.
+- **Tech Stack:** Flutter, Dart, Mobile, POS
+- **GitHub:** https://github.com/ialnezami/flutter-pos-system
+- **Key Features:** Point of Sale, restaurant management, modern UI
+
+#### 4. RAG Application
+- **Description:** Retrieval-Augmented Generation system with vector databases. AI-powered application for accurate, context-aware responses.
+- **Tech Stack:** Python, RAG, Vector DB, AI/ML
+- **GitHub:** https://github.com/ialnezami/app-RAG
+- **Key Features:** RAG system, vector databases, AI-powered responses
+
+#### 5. React POS System
+- **Description:** Modern Point of Sale system built with React, TypeScript, and Node.js. Full-featured restaurant and retail management.
+- **Tech Stack:** React, TypeScript, Node.js, POS
+- **GitHub:** https://github.com/ialnezami/POS-REACTJS
+- **Key Features:** POS system, restaurant management, retail management
+
+#### 6. E-commerce API
+- **Description:** Full-featured e-commerce backend API built with TypeScript. Complete RESTful API with authentication, products, and orders.
+- **Tech Stack:** TypeScript, Node.js, REST API, E-commerce
+- **GitHub:** https://github.com/ialnezami/e-commerce-api
+- **Key Features:** RESTful API, authentication, product management, order management
+
+#### 7. LinkedIn AI Agent
+- **Description:** AI-powered LinkedIn agent built with Python. Automated LinkedIn interactions and intelligent responses.
+- **Tech Stack:** Python, AI Agent, LLM, Automation
+- **GitHub:** https://github.com/ialnezami/Linkedin-agent-ai
+- **Key Features:** AI agent, LinkedIn automation, intelligent responses
+
+#### 8. WikiBot
+- **Description:** Intelligent Wikipedia chatbot with AI capabilities. Interactive bot for information retrieval and query responses.
+- **Tech Stack:** AI Bot, NLP, Chatbot, Wikipedia
+- **GitHub:** https://github.com/ialnezami/WikiBot
+- **Key Features:** Wikipedia integration, NLP, chatbot
+
+#### 9. Shop Inventory
+- **Description:** Complete inventory management system built with TypeScript. Track products, sales, and stock levels.
+- **Tech Stack:** TypeScript, Node.js, Inventory, Backend
+- **GitHub:** https://github.com/ialnezami/shopInventory
+- **Key Features:** Inventory management, product tracking, sales tracking
+
+#### 10. Docker CLI Tool
+- **Description:** Modern Docker management CLI tool built with Go. Simplified Docker container and image management.
+- **Tech Stack:** Go, Docker, CLI, DevOps
+- **GitHub:** https://github.com/ialnezami/docker-cli-tool
+- **Key Features:** Docker management, CLI tool, container management
+
+#### 11. LeadGen360
+- **Description:** AI-powered lead generation platform. Automated lead capture and management system with intelligent processing.
+- **Tech Stack:** Python, AI, Lead Generation, Automation
+- **GitHub:** https://github.com/ialnezami/LeadGen360
+- **Key Features:** Lead generation, AI-powered, automation
+
+#### 12. File Organizer
+- **Description:** Smart file organization tool built with Go. Automatically categorizes and organizes files by type and content.
+- **Tech Stack:** Go, CLI, File Management, Automation
+- **GitHub:** https://github.com/ialnezami/file-organizer
+- **Key Features:** File organization, automation, smart categorization
+
+#### 13. Barber App API
+- **Description:** Professional appointment booking API for barber shops and salons. Complete backend with scheduling and customer management.
+- **Tech Stack:** TypeScript, Node.js, Booking, API
+- **GitHub:** https://github.com/ialnezami/barber-app-api
+- **Key Features:** Appointment booking, scheduling, customer management
+
+#### 14. Contract Generator Pro
+- **Description:** AI-powered contract generation system. Automatically creates professional contracts based on templates and requirements.
+- **Tech Stack:** PHP, AI, Contracts, Automation
+- **GitHub:** https://github.com/ialnezami/Contract-Generator-Pro
+- **Key Features:** Contract generation, AI-powered, automation
 
 ---
 
