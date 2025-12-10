@@ -82,8 +82,11 @@
     "placeholder": "Tapez votre message...",
     "openChat": "Ouvrir le chat",
     "closeChat": "Fermer le chat",
+    "expandChat": "Agrandir en pleine page",
     "bookMeeting": "Réserver une réunion",
     "bookingPrompt": "Souhaitez-vous planifier une réunion ? Cliquez sur le bouton ci-dessous pour ouvrir le calendrier.",
-    "error": "Désolé, j'ai rencontré une erreur. Veuillez réessayer."
+    "error": "Désolé, j'ai rencontré une erreur. Veuillez réessayer.",
+    "clearChat": "Effacer le chat",
+    "inputHint": "Appuyez sur Entrée pour envoyer, Shift+Entrée pour une nouvelle ligne"
   }
 }

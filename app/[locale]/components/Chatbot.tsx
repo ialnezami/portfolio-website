@@ -2,8 +2,9 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Calendar, Bot } from 'lucide-react';
+import { MessageCircle, X, Send, Calendar, Bot, Maximize2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { useRouter } from 'next/navigation';
 
 interface Message {
   id: string;
@@ -25,21 +26,46 @@ export default function Chatbot() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Initialize welcome message after component mounts
+  // Initialize welcome message after component mounts or load from localStorage
   useEffect(() => {
     if (messages.length === 0) {
-      const welcomeText = t('welcome');
-      setMessages([
-        {
+      const savedMessages = localStorage.getItem('chatbot-messages');
+      if (savedMessages) {
+        try {
+          const parsed = JSON.parse(savedMessages);
+          setMessages(parsed.map((msg: any) => ({
+            ...msg,
+            timestamp: new Date(msg.timestamp)
+          })));
+        } catch (e) {
+          // If parsing fails, initialize with welcome message
+          const welcomeText = t('welcome');
+          setMessages([{
+            id: '1',
+            role: 'assistant',
+            content: welcomeText,
+            timestamp: new Date(),
+          }]);
+        }
+      } else {
+        const welcomeText = t('welcome');
+        setMessages([{
           id: '1',
           role: 'assistant',
           content: welcomeText,
           timestamp: new Date(),
-        },
-      ]);
+        }]);
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Save messages to localStorage whenever they change
+  useEffect(() => {
+    if (messages.length > 0) {
+      localStorage.setItem('chatbot-messages', JSON.stringify(messages));
+    }
+  }, [messages]);
 
   useEffect(() => {
     scrollToBottom();
@@ -127,6 +153,14 @@ export default function Chatbot() {
     window.open('https://zeeg.me/ibrahimalnezami/30min', '_blank');
   };
 
+  const handleExpand = () => {
+    // Save current messages to localStorage before navigating
+    if (messages.length > 0) {
+      localStorage.setItem('chatbot-messages', JSON.stringify(messages));
+    }
+    router.push('/chat');
+  };
+
   return (
     <>
       {/* Floating Button */}
@@ -180,13 +214,23 @@ export default function Chatbot() {
                   <p className="text-xs text-gray-400">{t('subtitle')}</p>
                 </div>
               </div>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="w-8 h-8 rounded-full hover:bg-white/10 flex items-center justify-center transition-colors"
-                aria-label={t('closeChat')}
-              >
-                <X className="w-4 h-4 text-gray-400" />
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={handleExpand}
+                  className="w-8 h-8 rounded-full hover:bg-white/10 flex items-center justify-center transition-colors"
+                  aria-label={t('expandChat')}
+                  title={t('expandChat')}
+                >
+                  <Maximize2 className="w-4 h-4 text-gray-400" />
+                </button>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="w-8 h-8 rounded-full hover:bg-white/10 flex items-center justify-center transition-colors"
+                  aria-label={t('closeChat')}
+                >
+                  <X className="w-4 h-4 text-gray-400" />
+                </button>
+              </div>
             </div>
 
             {/* Messages */}

@@ -82,8 +82,11 @@
     "placeholder": "Type your message...",
     "openChat": "Open chat",
     "closeChat": "Close chat",
+    "expandChat": "Expand to full page",
     "bookMeeting": "Book a Meeting",
     "bookingPrompt": "Would you like to schedule a meeting? Click the button below to open the calendar.",
-    "error": "Sorry, I encountered an error. Please try again."
+    "error": "Sorry, I encountered an error. Please try again.",
+    "clearChat": "Clear Chat",
+    "inputHint": "Press Enter to send, Shift+Enter for new line"
   }
 }
