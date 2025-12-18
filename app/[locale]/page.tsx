@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { 
@@ -19,7 +19,9 @@ import {
   Database,
   Cloud,
   Bot,
-  ExternalLink
+  ExternalLink,
+  Menu,
+  X
 } from 'lucide-react';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import Chatbot from './components/Chatbot';
@@ -27,6 +29,7 @@ import Chatbot from './components/Chatbot';
 export default function Home() {
   const t = useTranslations();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
 
   useEffect(() => {
@@ -215,6 +218,8 @@ export default function Home() {
             >
               IA
             </motion.div>
+            
+            {/* Desktop Menu */}
             <div className="hidden md:flex gap-8 items-center">
               {[
                 t('nav.about'),
@@ -234,7 +239,80 @@ export default function Home() {
               ))}
               <LanguageSwitcher />
             </div>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden flex items-center gap-3">
+              <LanguageSwitcher />
+              <motion.button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="w-10 h-10 rounded-lg glass hover:bg-white/10 active:bg-white/20 flex items-center justify-center transition-colors touch-manipulation"
+                whileTap={{ scale: 0.95 }}
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? (
+                  <X className="w-6 h-6 text-white" />
+                ) : (
+                  <Menu className="w-6 h-6 text-white" />
+                )}
+              </motion.button>
+            </div>
           </div>
+
+          {/* Mobile Menu */}
+          <AnimatePresence>
+            {mobileMenuOpen && (
+              <>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[45] md:hidden"
+                  onClick={() => setMobileMenuOpen(false)}
+                />
+                <motion.div
+                  initial={{ x: '100%' }}
+                  animate={{ x: 0 }}
+                  exit={{ x: '100%' }}
+                  transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                  className="fixed top-0 right-0 h-full w-80 max-w-[85vw] glass border-l border-white/10 z-[55] md:hidden overflow-y-auto"
+                >
+                  <div className="p-6">
+                    <div className="flex justify-between items-center mb-8">
+                      <h2 className="text-2xl font-bold text-gradient">Menu</h2>
+                      <motion.button
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="w-10 h-10 rounded-lg hover:bg-white/10 flex items-center justify-center"
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <X className="w-6 h-6 text-white" />
+                      </motion.button>
+                    </div>
+                    <nav className="flex flex-col gap-4">
+                      {[
+                        t('nav.about'),
+                        t('nav.experience'),
+                        t('nav.projects'),
+                        t('nav.skills'),
+                        t('nav.contact')
+                      ].map((item, index) => (
+                        <motion.a
+                          key={item}
+                          href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="px-4 py-3 rounded-lg hover:bg-white/10 active:bg-white/20 transition-colors text-lg touch-manipulation"
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.1 }}
+                        >
+                          {item}
+                        </motion.a>
+                      ))}
+                    </nav>
+                  </div>
+                </motion.div>
+              </>
+            )}
+          </AnimatePresence>
         </motion.nav>
 
         {/* Hero Section */}
